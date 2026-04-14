@@ -1,0 +1,138 @@
+/* Import a professional font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #2c3e50;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Logo section layout */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* BIG icon covering both lines */
+.logoIcon {
+  font-size: 40px;   /* 👈 makes it span both title + tagline */
+  display: flex;
+  align-items: center;
+}
+
+/* Text stacked */
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin: 0;
+  font-weight: 600;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 12px;
+  color: #1abc9c;
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 25px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: #1abc9c;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;          /* 👈 bigger size */
+  font-size: 16px;             /* 👈 larger text */
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;          /* 👈 smoother corners */
+  cursor: pointer;
+  margin-left: 10px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Login button */
+.btn {
+  background-color: white;
+  color: #2c3e50;
+}
+
+/* Signup button (highlighted) */
+.signup {
+  background-color: #1abc9c;
+  color: white;
+}
+
+/* Hover effects */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.signup:hover {
+  background-color: #16a085;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* "More" text in grey */
+.dropdownTitle {
+  color: #bdc3c7;   /* 👈 grey */
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdownTitle:hover {
+  color: white;
+}
+
+/* Dropdown menu */
+.dropdownMenu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  padding: 10px 0;
+  min-width: 130px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdownMenu a {
+  display: block;              
+  width: 100%;              
+  padding: 10px 16px;         
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+}
+
+/* Full rectangular hover */
+.dropdownMenu a:hover {
+  background-color: #eaeaea;  
+}

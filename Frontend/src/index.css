@@ -1,0 +1,19 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FULL PAGE BACKGROUND FIX */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* REMOVE HORIZONTAL SCROLL */
+body {
+  overflow-x: hidden;
+}

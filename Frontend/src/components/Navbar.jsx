@@ -1,61 +1,58 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import "../styles/Navbar.css";
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav style={styles.nav}>
-      {/* Left: Logo + Name */}
-      <div style={styles.logoSection}>
-        <h2 style={{ margin: 0 }}>♻️ WasteZero</h2>
+    <nav className="nav">
+
+      {/* Logo */}
+      <div className="logoSection">
+        <span className="logoIcon">♻️</span>
+        <div className="logoText">
+          <h2 className="logo">WasteZero</h2>
+          <p className="tagline">Smart Recycling Network</p>
+        </div>
       </div>
 
-      {/* Center: Navigation Links */}
-      <div style={styles.links}>
-        <Link to="/" style={styles.link}>Home</Link>
-        <Link to="/opportunities" style={styles.link}>Opportunities</Link>
-        <Link to="/about" style={styles.link}>About</Link>
-        <Link to="/contact" style={styles.link}>Contact</Link>
+      {/* Links */}
+      <div className="links">
+        <Link to="/">Home</Link>
+        <Link to="/opportunities">Opportunities</Link>
+        <Link to="/how-it-works">How It Works</Link>
+
+        {/* Dropdown (CLICK based) */}
+        <div className="dropdown">
+          <span 
+            className="dropdownTitle"
+            onClick={() => setOpen(!open)}
+          >
+            More
+          </span>
+
+          {open && (
+            <div className="dropdownMenu">
+              <Link to="/about" onClick={() => setOpen(false)}>About</Link>
+              <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Right: Auth Buttons */}
+      {/* Buttons */}
       <div>
         <Link to="/login">
-          <button style={styles.btn}>Login</button>
+          <button className="btn">Login</button>
         </Link>
         <Link to="/signup">
-          <button style={{ ...styles.btn, marginLeft: "10px" }}>Signup</button>
+          <button className="btn signup">Signup</button>
         </Link>
       </div>
+
     </nav>
   );
 }
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "15px 40px",
-    backgroundColor: "#2c3e50",
-    color: "white",
-  },
-  logoSection: {
-    fontWeight: "bold",
-  },
-  links: {
-    display: "flex",
-    gap: "20px",
-  },
-  link: {
-    color: "white",
-    textDecoration: "none",
-    fontSize: "16px",
-  },
-  btn: {
-    padding: "6px 12px",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-};
 
 export default Navbar;
