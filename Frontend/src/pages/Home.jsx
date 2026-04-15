@@ -15,6 +15,13 @@ function Home() {
           schedule pickups, categorize recyclable waste, and contribute
           to a cleaner environment.
         </p>
+        <p>Waste</p>
+        <p>Waste</p>
+        <p>Waste</p>
+        <p>Waste</p>
+        <p>Waste</p>
+        <p>Waste</p>
+
 
         <p>
           Track your waste, reduce pollution, and make a positive impact
