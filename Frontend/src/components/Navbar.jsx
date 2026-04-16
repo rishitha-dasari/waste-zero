@@ -1,9 +1,25 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../styles/Navbar.css";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="nav">
@@ -23,8 +39,8 @@ function Navbar() {
         <Link to="/opportunities">Opportunities</Link>
         <Link to="/how-it-works">How It Works</Link>
 
-        {/* Dropdown (CLICK based) */}
-        <div className="dropdown">
+        {/* Dropdown */}
+        <div className="dropdown" ref={dropdownRef}>
           <span 
             className="dropdownTitle"
             onClick={() => setOpen(!open)}
